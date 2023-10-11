@@ -1,0 +1,263 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin: 0 auto;
+	width: fit-content;
+	margin-top: 20px;
+}
+
+.flex button {
+	all: unset;
+	padding: 10px 20px;
+	text-transform: capitalize;
+	border: 1px solid black;
+	border-radius: 14px;
+}
+
+center {
+	margin-top: 40px;
+}
+
+.item {
+	width: 334px;
+	flex-grow: 1;
+}
+
+.item .preview {
+	border: 1px solid #000;
+	background: #fff;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.item .preview img {
+	height: 161px;
+}
+
+.item .info {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	background: #000;
+	padding: 20px;
+	width: 100%;
+}
+
+.item .info h2 {
+	color: #fff;
+	font-family: Gilroy;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-bottom: 11px;
+}
+
+.item .info p {
+	color: rgba(255, 255, 255, 0.56);
+	font-family: Gilroy;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-bottom: 16px;
+}
+
+.item .info .mini-info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.item .info .mini-info .rate,
+.item .info .mini-info .count,
+.item .info .mini-info .price {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.item .info .mini-info .rate span,
+.item .info .mini-info .count span,
+.item .info .mini-info .price span {
+	color: #fff;
+	font-family: Gilroy;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.item .info button {
+	width: 100%;
+	height: 55px;
+	border-radius: 10px;
+	border: 1px solid #000;
+	background: #fff;
+	color: #000;
+	text-align: center;
+	font-family: Gilroy;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.item .info button.active {
+	border-radius: 10px;
+	border: 1px solid #1f86ff;
+	background: #1f86ff;
+	color: #fff;
+	text-align: center;
+	font-family: Gilroy;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.item .info button:hover {
+	border-radius: 10px;
+	border: 1px solid #1f86ff;
+	background: #1f86ff;
+	color: #fff;
+	text-align: center;
+	font-family: Gilroy;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.item:hover {
+	box-shadow: 0px 0px 3px #000;
+}
+
+.item:hover .preview img {
+	transform: scale(1.1);
+}
+
+.item.fade {
+	animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+b {
+	color: white !important;
+	cursor: pointer;
+}
+
+.modalka {
+	width: 50%;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px);
+	padding: 20px;
+	flex-direction: column;
+	gap: 20px;
+	display: none;
+}
+.modalka .close_img {
+	position: fixed;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.modalka h2 {
+	color: white;
+	text-shadow: 0px 0px 10px black;
+}
+
+.modalka .item-container {
+	width: 100%;
+	height: 70%;
+	position: relative;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.modalka .item-container::after {
+	content: "";
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+	position: absolute;
+	display: block;
+	z-index: 100;
+	bottom: 0px;
+}
+
+.modalka .total {
+	width: 100%;
+	height: 30%;
+	background-color: white;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px;
+	position: relative;
+}
+
+.modalka .total .top {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modalka .total button {
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	font-size: 24px;
+	padding: 10px 20px;
+	width: 100%;
+	border: none;
+	border-radius: 10px;
+	background-color: #1f86ff;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+
+.modalka .total button:active {
+	scale: 0.9;
+}

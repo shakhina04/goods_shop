@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <center>
+        <h1>Cart: 0</h1>
+        <div class="flex">
+            <button id="showFive">
+                show first 5
+            </button>
+            <button id="showAll">
+                show all
+            </button>
+            <button id="menu">
+                show cart
+            </button>
+        </div>
+    </center>
+
+    <div class="container">
+
+    </div>
+
+
+    <style>
+        body {
+            overflow: hidden !important;
+        }
+        .scrollable {
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-bottom: 200px;
+        }
+
+        .cart-item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .cart-item .left,
+        .cart-item .mid,
+        .cart-item .right {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .cart-item .left {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-item .left img {
+            width: 80px;
+            height: 80px;
+            background-color: gray;
+            object-fit: cover;
+        }
+
+        .cart-item .mid {
+            width: 100%;
+        }
+
+        .cart-item .mid .details {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .cart-item .details .counter {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #c4c4c4;
+        }
+
+        .cart-item .counter button,
+        .cart-item .counter input {
+            border: none;
+            background: none;
+            width: 30px;
+            padding: 5px 10px;
+            appearance: none;
+            outline: none;
+        }
+
+        .cart-item .counter button {
+            cursor: pointer;
+        }
+
+        .cart-item .counter input::-webkit-outer-spin-button,
+        .cart-item .counter input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .cart-item .details b {
+            color: black !important;
+            font-weight: 400;
+        }
+
+        .cart-item .details p {
+            color: gray !important;
+        }
+
+        .cart-item .right {
+            align-items: flex-end;
+            width: 40%;
+        }
+
+        .cart-item .right button {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #c4c4c4;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="modalka">
+        <img class="close_img" src="icons/close_modal.png" alt="">
+        <h2>Корзина</h2>
+
+        <div class="item-container">
+            <div class="scrollable">
+                
+            </div>
+        </div>
+
+        <div class="total">
+            <div class="top">
+                <span>
+                    total:
+                </span>
+                <span id="total">
+                    1000$
+                </span>
+            </div>
+            <button>order</button>
+        </div>
+
+    </div>
+
+    <script src="./db.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
